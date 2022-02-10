@@ -1,0 +1,96 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "task name": "art",
+      "priority": "high",
+      "status": "undone",
+      "id": 4
+    },
+    {
+      "task name": "dhwani",
+      "priority": "high",
+      "status": "undone",
+      "id": 5
+    },
+    {
+      "name": "ysvi",
+      "priority": "on",
+      "status": "undone",
+      "id": 6
+    },
+    {
+      "name": "NIDHI",
+      "priority": "on",
+      "status": "undone",
+      "id": 7
+    },
+    {
+      "name": "rumi",
+      "priority": "on",
+      "status": "undone",
+      "id": 8
+    },
+    {
+      "name": "rihana",
+      "priority": "on",
+      "status": "undone",
+      "id": 9
+    },
+    {
+      "name": "pooja",
+      "status": "undone",
+      "id": 10
+    },
+    {
+      "name": "naiha",
+      "priority": "high",
+      "status": "undone",
+      "id": 11
+    },
+    {
+      "name": "hello",
+      "priority": "medium",
+      "status": "undone",
+      "id": 12
+    },
+    {
+      "name": "ruhi",
+      "priority": "high",
+      "status": "undone",
+      "id": 13
+    },
+    {
+      "name": "haiyaa",
+      "priority": "medium",
+      "status": "undone",
+      "id": 14
+    },
+    {
+      "name": "mahima",
+      "priority": "medium",
+      "status": "undone",
+      "id": 15
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

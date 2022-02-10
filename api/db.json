@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "ruhi",
+      "priority": "high",
+      "status": "undone"
+    },
+    {
+      "name": "mahima",
+      "priority": "medium",
+      "status": "undone",
+      "id": 2
+    },
+    {
+      "name": "art work to do ",
+      "priority": "high",
+      "status": "undone",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
