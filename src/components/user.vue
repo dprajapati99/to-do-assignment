@@ -1,9 +1,6 @@
 <template>
-<!-- <nav>
-    <ul>
-        <li><a href="/showdata">SHOW LIST</a></li>
-    </ul>
-</nav> -->
+ <router-link to="/showdata">showdata</router-link><br><br>
+ <router-link to="/update">update</router-link>
     <div>
          <h1>ToDo List</h1>
          <form method="post">
@@ -37,8 +34,11 @@ export default{
                   name:this.name,
                   priority:this.priority,
                   status:this.status
+                 
               })
+               this.$router.push('/showdata')
               alert(result)
+              
           }
     
        

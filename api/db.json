@@ -1,31 +1,19 @@
 {
   "posts": [
     {
-      "id": 1,
-      "name": "ruhi",
-      "priority": "high",
-      "status": "undone"
-    },
-    {
-      "name": "mahima",
-      "priority": "medium",
-      "status": "undone",
-      "id": 2
-    },
-    {
-      "name": "art work to do ",
+      "name": "artwork ",
       "priority": "high",
       "status": "undone",
-      "id": 3
-    }
-  ],
-  "comments": [
+      "id": 7
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "mandala art ",
+      "priority": "low",
+      "status": "undone",
+      "id": 8
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }

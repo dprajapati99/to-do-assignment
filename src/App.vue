@@ -1,11 +1,10 @@
 <template>
-<div id="app">
-  hello world
- <!-- <user></user> -->
-     <router-link to="/user">user</router-link><br />
-     
-    <router-view></router-view>
-</div>
+  <div id="nav">
+    <!-- <router-link to="/">HelloWorld</router-link> |
+    <router-link to="/user">User</router-link> | -->
+    
+  </div>
+  <router-view/>
 </template>
 
 <script>

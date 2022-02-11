@@ -1,30 +1,32 @@
-import { createRouter,createWebHistory} from 'vue-router'
-import HelloWorld from './components/HelloWorld';
-import user from './components/user';
-import showdata from './components/showdata';
-
-
-
-const routes=[
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from './components/HelloWorld'
+import User from './components/user'
+import showdata from './components/showdata'
+import update from './components/update'
+const routes = [
     {
-        name:'HelloWorld',
-        path:'/',
-        components:HelloWorld
-       },
+        path: '/',
+        name: 'Home',
+        component: Home
+    },
     {
-        name:'user',
-        path:'/user',
-        components:user
-       },
+        path: '/user',
+        name: 'User',
+        component: User
+    },
     {
-    name:'showdata',
-    path:'/showdata',
-    components:showdata
-   }
-  
-];
-const router =createRouter({
-    history:createWebHistory(),
+        path: '/showdata',
+        name: 'showdata',
+        component: showdata
+    },
+    {
+        path: '/update',
+        name: 'update',
+        component:update
+    }
+]
+const router = createRouter({
+    history: createWebHistory(process.env.BASE_URL),
     routes
 })
-export default router;
+export default router
