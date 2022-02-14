@@ -17,7 +17,7 @@
         <td>{{ item.priority }}</td>
         <td>{{ item.status }}</td>
         <td><button v-on:click="deletetask(item.id)">Delete</button></td>
-        <td><button @click="$router.push({name: 'update', params: { id: item.id }})">Update</button></td>
+      <td><button @click="$router.push({name: 'Update', params: {id :item.id }})">update</button></td>
         <td>
           <input type="checkbox" id="checkbox" v-model="checked" />{{ checked }}
         </td>
@@ -51,7 +51,7 @@ export default {
       this.list = resp.data;
       console.log(resp.data);
          });
-    }
+    },
   }
 }
 </script>

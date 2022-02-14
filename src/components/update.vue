@@ -1,16 +1,16 @@
 <template>
   <!-- <router-link to="/user">user</router-link> -->
-  <div id="app">
+  <div>
     <h1>ToDo List</h1>
-    <form method="post">
-      task name:<input type="text" name="name" v-model="name" /><br /><br />
+    <form>
+      task name:<input type="text" name="name" v-model="task.name" /><br /><br />
       priority:
       <label for="high">high</label>
       <input
         type="radio"
         value="high"
         id="high"
-        v-model="priority"
+        v-model="task.priority"
         name="priority"
       />
       <label for="medium">medium</label>
@@ -18,7 +18,7 @@
         type="radio"
         value="medium"
         id="medium"
-        v-model="priority"
+        v-model="task.priority"
         name="priority"
       />
       <label for="low">low</label>
@@ -26,10 +26,13 @@
         type="radio"
         value="low"
         id="low"
-        v-model="priority"
+        v-model="task.priority"
         name="priority"
       /><br /><br />
-      <button v-on:click="updateData()">update post</button>
+       <router-link :to="{ name: 'showdata' }">
+        <button v-on:click="updateData()">UPDATEPOST</button>
+      </router-link>
+     
     </form>
   </div>
 </template>
@@ -39,25 +42,34 @@ export default {
   data() {
     return {
       task:{
-      name: "",
-      priority: "",
-      }
+      name: '',
+      priority: '',
+      },
     };
   },
 
-  mounted() {
-    
-    this.updateData();
+
+  methods: {
+     async updateData()
+     {
+       console.warn(this.task)
+       
+        let result = await axios.put('http://localhost:3000/posts/' + this.$route.params.id,{
+                  name:this.task.name,
+                  priority:this.task.priority,
+                  status:this.status
+                 
+              })
+               
+              alert(result)
+     }
   },
-  method: {
-    updateData() {
-      axios.get(' http://localhost:3000/posts/6').then((resp) => {
-        this.task = resp.data;
-        console.log(resp.data);
-      });
-      console.warn(this.$route.params.id)
-      this.$router.push("/user");
-    },
-  },
+  async  mounted() {
+  
+   const result = await axios.get('http://localhost:3000/posts/' + this.$route.params.id)
+   console.warn(result.data)
+   this.task=result.data
+   //this.updateData()
+},
 };
 </script>
