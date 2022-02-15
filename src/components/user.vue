@@ -1,13 +1,19 @@
 <template>
   <router-link to="/showdata">showdata</router-link><br><br>
-  <router-link to="/update">update</router-link>
+  <!-- <router-link to="/update">update</router-link> -->
   <!-- <td><button @click="$router.push({name: 'Edit', params: {id: 5} })">Update</button></td> -->
 
-  <div>
-    <h1>ToDo List</h1>
+  
+  
+      
+  <p class="h2">Add Task</p>
     <form method="post">
-      task name:<input type="text" name="name" v-model="name" /><br /><br />
-      priority:
+      <div class="form-group">
+      <lable class="form-check-label" for="task name">task name:</lable>
+      <input  placeholder="Enter task name" type="text" name="name" v-model="name"  /><br /><br />
+      </div>
+      <div class="form-group">
+      <lable for="priority">priority:</lable>
       <label for="high">high</label>
       <input
         type="radio"
@@ -32,24 +38,26 @@
         v-model="priority"
         name="priority"
       /><br /><br />
+      </div>
       <!-- <button v-on:click ="addTask()">post</button> -->
       <router-link :to="{ name: 'showdata' }">
-        <button v-on:click="addTask()">Post</button>
+        <button type="submit" class="btn btn-primary" v-on:click="addTask()">Add Task</button>
       </router-link>
     </form>
-  </div>
+ 
 </template>
 <script>
-import axios from "axios";
+import axios from "axios"; // import axios for post data 
 export default {
   data() {
     return {
       name: "",
       priority: null,
-      status: "undone",
+  
     };
   },
   methods: {
+    //add task 
     async addTask() {
       let result = await axios.post("  http://localhost:3000/posts", {
         name: this.name,

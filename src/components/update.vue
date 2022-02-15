@@ -1,9 +1,14 @@
 <template>
   <!-- <router-link to="/user">user</router-link> -->
-  <div>
-    <h1>ToDo List</h1>
+  
+  <p class="h2">Update Task</p>
     <form>
-      task name:<input type="text" name="name" v-model="task.name" /><br /><br />
+      <div class="form-group">
+      task name:<input
+        type="text"
+        name="name"
+        v-model="task.name"
+      /><br /><br />
       priority:
       <label for="high">high</label>
       <input
@@ -29,47 +34,47 @@
         v-model="task.priority"
         name="priority"
       /><br /><br />
-       <router-link :to="{ name: 'showdata' }">
-        <button v-on:click="updateData()">UPDATEPOST</button>
+      <router-link :to="{ name: 'showdata' }">
+        <button class="btn btn-primary" v-on:click="updateData()">Update Task</button>
       </router-link>
-     
+      </div>
     </form>
-  </div>
+ 
 </template>
 <script>
-import axios from "axios";
+import axios from "axios"; //import axios for update data in database
 export default {
   data() {
     return {
-      task:{
-      name: '',
-      priority: '',
+      task: {
+        name: "",
+        priority: "",
+        status:""
       },
     };
   },
 
-
   methods: {
-     async updateData()
-     {
-       console.warn(this.task)
-       
-        let result = await axios.put('http://localhost:3000/posts/' + this.$route.params.id,{
-                  name:this.task.name,
-                  priority:this.task.priority,
-                  status:this.status
-                 
-              })
-               
-              alert(result)
-     }
+    async updateData() { // update data in database
+      console.warn(this.task);//check if data is update or not
+
+      let result = await axios.put(
+        "http://localhost:3000/posts/" + this.$route.params.id,
+        {
+          name: this.task.name,
+          priority: this.task.priority,
+          status: this.status,
+        }
+      );
+
+      alert(result);
+    },
   },
-  async  mounted() {
-  
-   const result = await axios.get('http://localhost:3000/posts/' + this.$route.params.id)
-   console.warn(result.data)
-   this.task=result.data
-   //this.updateData()
-},
+  async mounted() { //get prefilled data in form
+        const result = await axios.get("http://localhost:3000/posts/" + this.$route.params.id   );
+        console.warn(result.data);
+        this.task = result.data;
+        //this.updateData()
+  },
 };
 </script>
