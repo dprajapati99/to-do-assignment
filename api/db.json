@@ -1,34 +1,34 @@
 {
   "posts": [
     {
-      "name": "maditation peace",
-      "priority": "low",
-      "id": 8
+      "name": "maditation life",
+      "priority": "medium",
+      "status": "undone",
+      "id": 1
     },
     {
       "name": "watercolor painting color",
-      "priority": "medium",
-      "id": 9
-    },
-    {
-      "name": "reading novels bboks",
       "priority": "high",
-      "id": 11
+      "status": "undone",
+      "id": 2
     },
     {
-      "name": "watch tedx on netflix",
+      "name": "mandala art is done ",
       "priority": "medium",
-      "id": 12
+      "status": "undone",
+      "id": 3
     },
     {
-      "name": "take time for yourself",
+      "name": "mandala art ",
       "priority": "high",
-      "id": 13
+      "status": "undone",
+      "id": 4
     },
     {
-      "name": "yoga ",
+      "name": "maditation  work",
       "priority": "low",
-      "id": 14
+      "status": "undone",
+      "id": 5
     }
   ],
   "comments": [],

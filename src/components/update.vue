@@ -49,7 +49,7 @@ export default {
       task: {
         name: "",
         priority: "",
-        status:""
+        status:"undone"
       },
     };
   },
@@ -63,7 +63,7 @@ export default {
         {
           name: this.task.name,
           priority: this.task.priority,
-          status: this.status,
+        
         }
       );
 
